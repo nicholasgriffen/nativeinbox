@@ -1,14 +1,18 @@
-import React from 'react';
-import { Text, View, StyleSheet, FlatList } from 'react-native';
+import React from 'react'
+import { View, StyleSheet, FlatList } from 'react-native'
 
 export const MessageList = props =>  {
     return (
       <View>
         <FlatList 
         data={props.messages} 
-        renderItem={({item: message}) => <Text style={styles.message}>
-        {`${message.subject}`}
-        </Text>}
+        renderItem={({item: message}) => ( 
+          <Message 
+            style={styles.message}
+            message={message}
+            onMessagePress={props.onMessagePress}>
+          </Message>
+        )}
         />
       </View>
   )
