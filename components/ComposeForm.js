@@ -1,7 +1,8 @@
-import React from 'react';
-import { Button, TextInput, View } from 'react-native';
+import React from 'react'
+import { Button, TextInput, View } from 'react-native'
 
 export default class ComposeForm extends React.Component {
+  
   constructor() {
     super()
     this.state = {
@@ -9,6 +10,7 @@ export default class ComposeForm extends React.Component {
       subject: '',
     }
   }
+
   render() {
     const { composing, onSendPress } = this.props
       return ( 

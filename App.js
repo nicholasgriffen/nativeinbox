@@ -24,6 +24,7 @@ export default class App extends React.Component {
       messages
     })
   }
+
   onMessagePress = id => e => {
     this.setState({
       ...this.state,
@@ -42,6 +43,7 @@ export default class App extends React.Component {
       composing: !this.state.composing
     })
   }
+
   onSendPress = ({body, subject}) => async e => {
     const request = await fetch(this.API, {
       method: 'POST',
@@ -54,6 +56,7 @@ export default class App extends React.Component {
       messages: [...this.state.messages, newMessage]
     })
   }  
+
   render() {
     return (
       <View style={styles.container}>
@@ -70,7 +73,7 @@ export default class App extends React.Component {
             onMessagePress={this.onMessagePress}/>
         </Card>
       </View>
-    );
+    )
   }
 }
 
@@ -78,8 +81,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight,
+    paddingTop: Constants.statusBarHeight + 5,
     backgroundColor: '#ecf0f1',
     padding: 8,
   },
-});
+})
